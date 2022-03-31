@@ -1,0 +1,12 @@
+.container {
+   display: flex; 
+   text-align: center;
+   margin: 45vh auto;
+   flex-direction: column;
+   width: 200px; 
+   
+   button {
+      width: 80px;
+      align-self: center;
+   }
+}
