@@ -15,11 +15,11 @@ const AuthContext = createContext({} as AuthContextData);
 export function AuthProvider({ children }) {
     const isAuthenticated = false
 
-    function signIn({email, password} : SignInCredentials) {
-        console.log({})
+    async function signIn({email, password} : SignInCredentials) {
+        console.log({email, password});
     }
     return (
-        <AuthContext.Provider value={ }>
+        <AuthContext.Provider value={{ signIn, isAuthenticated }}>
             {children}
         </AuthContext.Provider>
     )
