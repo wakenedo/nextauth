@@ -4,7 +4,7 @@ import { signOut } from '../contexts/AuthContext';
 
 let cookies = parseCookies()
 let isRefreshing = false
-let failedRequestsQueue = [] as Array[]
+let failedRequestsQueue = []
 
 export const api = axios.create({
     baseURL: 'http://localhost:3333',
