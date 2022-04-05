@@ -1,7 +1,7 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
 import { setCookie, parseCookies, destroyCookie } from 'nookies';
 import Router from 'next/router'
-import { api } from "../services/api";
+import { api } from "../services/apiClient";
 
 
 
@@ -19,7 +19,7 @@ type SignInCredentials = {
 
 type AuthContextData = {
     signIn(credentials: SignInCredentials): Promise<void>;
-    user?: User;
+    user: User;
     isAuthenticated: boolean;
 };
 
@@ -80,7 +80,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
                 roles,
             })
 
-
+            api.defaults.headers['Authorization'] = `Bearer ${token}`
 
             //Or we could import {router} and use const router = useRouter()
             Router.push('/dashboard')
