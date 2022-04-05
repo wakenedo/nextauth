@@ -50,9 +50,9 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
                 setUser({ email, permissions, roles })
             })
-                .catch(() => {
-                    signOut()
-                })
+            .catch(() => {
+                signOut()
+            })
         }
     }, [])
 
